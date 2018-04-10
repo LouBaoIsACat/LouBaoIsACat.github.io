@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My Web</title>
+    <style>
+        *{margin:0;padding:0}/* *通配符选择器，适用于小项目；初始化为0 ;*/
+        .box{
+            width:660px;
+            height:460px;
+           box-shadow:0px 0px 10px 0px #000;/*水平位移 竖直位移 模糊半径 阴影大小 颜色*/
+            margin:110px auto;
+        }
+        .box ul{
+            list-style:none;/*去除默认小黑圆点*/
+            word-spacing:-5px;/*单词之间的距离，同样可以解决li之间的空隙问题
+            ，font-size：0px也可以*/
+        }
+        .box ul li{
+            display:inline-block;
+            background-color:green;
+            width:220px;
+            height:220px;
+            border-radius:50%;/*正方形变圆形*/
+        }
+        .box ul li:nth-child(odd){/*选择第奇数个标签*/
+            margin-right:220px;
+        }
+        .box ul li:nth-child(-n+2){/*选择前两个li*/
+            margin-bottom:20px;
+        }
+        .box ul li h3{
+            color:white;
+            text-align:center;
+            line-height:100px;/*一行文字所占高度*/
+        }
+        .box ul li p{
+            color:white;
+            text-align:center;
+            line-height:100px;/*一行文字所占高度*/
+        }
+        .box ul li img{
+            width:220px;
+            height:220px;
+            border-radius:50%;
+            margin-top: -200px;
+            transform-origin:95% 50%;
+            transform:1.5s;/*过渡时间*/
+         }
+        .box ul li:nth-child(n+3) img{
+            transform-origin:5% 50%;
+        }
+        .box ul li:hover img{
+            transform:rotate(-170deg)/*图片逆时针旋转css3*/
+        }
+        .box ul li:nth-child(n+3):hover img{
+            transform:rotate(170deg)
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <ul>
+        <li><h3>桃花花语</h3>
+            <p>爱情的俘虏</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/189_135_100/t018059948cdd6354e1.jpg"
+                 width="220" height="220" alt="油菜花"/></li><!--inline-block会解析两个li之间的空格
+        --><li><h3>薰衣草花语</h3>
+        <p>等待爱情</p>
+        <img src="https://ps.ssl.qhimg.com/sdmt/127_135_100/t01c8b0ce13af1d8f76.jpg"
+             width="220" height="220" alt="油菜花"/></li><!--
+        --><li><h3>风信子花语</h3>
+        <p>悲伤、忧郁的爱</p>
+        <img src="https://ps.ssl.qhimg.com/sdmt/181_135_100/t018c5c73ed1885e273.jpg"
+             width="220" height="220" alt="油菜花"/></li><!--
+        --><li><h3>油菜花花语</h3>
+        <p>come on！加油！</p>
+        <img src="https://ps.ssl.qhimg.com/sdmt/179_135_100/t01046fe106f818e565.jpg"
+             width="220" height="220" alt="油菜花"/></li>
+    </ul>
+</div>
+
+
+</body>
+</html>
