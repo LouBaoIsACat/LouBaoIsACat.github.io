@@ -8,13 +8,13 @@
         *{margin:0;padding:0;}
         body{
             background: #D2B48C;
-        }
+        }/*整个页面的背景颜色*/
         .nav{
             width:100%;
             height:50px;
             background: #000000;
             position:relative;
-        }
+        }/*导航栏的大小*/
         .nav ul{
             position:absolute;
             right:10px;
@@ -49,7 +49,7 @@
             border-right-style:outset;
             border-bottom-style:outset;
             border-color:#DEB887;
-        }
+        }/*五个部分的div设定*/
         #second ul{
             list-style: none;
         }
@@ -71,6 +71,7 @@
         #forth ol{
             margin-left:35px;
         }
+        /*表格*/
         #forth>table{
             border-collapse:collapse;
         }
@@ -92,27 +93,51 @@
         #forth table tr:last-child{
             background:#A9A9A9;
         }
+        /******第五部分*****/
+        #fifth{
+            height:343px;
+        }
         #fifth h2{
             border-left: 2px solid #DDDDDD;
             padding-left:8px ;
-        }
-
-        #fifth span{
-            font-size:14px;
-        }
-        #fifth p{
-            font-size:10px;
-            color:gray;
-        }
+        }/*第五部分的标题*/
         input[name="submit"]{
-            width:875px;
+            width:100%;
             height:33px;
             border-radius:8px;
             border:0px;
             color:white;
             background: #00008B;
             margin-left: 0px;
+        }/*提交键*/
+        .form_text{
+            width:43%;
+            height:70%;
+            display:inline-block;
+        }/*表单字体*/
+        .form_input{
+            width:56%;
+            height:70%;
+            float:right;
+        }/*表单输入框*/
+        .form_text>span{
+            float:right;
+            font-size:14px;
+            font-family:"楷体";
+            font-weight:300;
+        }/*表单字体*/
+        input[name="sex"]{margin-top:8px;}
+        .final_footer{
+            width:100%;
+            height:40px;
+            background: black;
+            text-align: center;
         }
+        .final_footer>span{
+            color:white;
+            font-size:4px;
+        }
+        .form_input>textarea{width:90%;}
     </style>
 </head>
 <body>
@@ -224,22 +249,22 @@
         <tr>
             <td>表内容单元格</td>
             <td>表内容单元格</td>
-            <td>操作</td>
+            <td><a href="#">操作</a></td>
         </tr>
         <tr>
             <td>表内容单元格</td>
             <td>表内容单元格</td>
-            <td>操作</td>
+            <td><a href="#">操作</a></td>
         </tr>
         <tr>
             <td>表内容单元格</td>
             <td>表内容单元格</td>
-            <td>操作</td>
+            <td><a href="#">操作</a></td>
         </tr>
         <tr>
             <td>表内容单元格</td>
             <td>表内容单元格</td>
-            <td>操作</td>
+            <td><a href="#">操作</a></td>
         </tr>
         <tr>
             <td>总计</td>
@@ -250,29 +275,39 @@
 <div class="part" id="fifth">
     <h2>这里以后是一个侧栏，这是侧栏的标题</h2><br>
     <form action="#">
-        <span>请输入邮箱地址：</span>
-        <input type="text" placeholder="这是一个文本输入框"><br>
-        <p>邮箱地址请按要求格式输入</p>
-        <span>请输入密码：</span>
-        <input type="text" placeholder="这是一个文本输入框"><br>
-        <span>请重复输入密码：</span>
-        <input type="text" placeholder="这是一个文本输入框"><br>
-        <p>密码请为6-16位英文数字</p><br>
-        <span>性别：</span><input type="radio" name="sex" value="male">男
-        <input type="radio" name="sex" value="female">女<br>
-        <span>城市：</span>
-        <select name="city">
-            <option value="beijing">北京</option>
-            <option value="guangzhou">广州</option>
-            <option value="fujian">福建</option>
-            <option value="xian">西安</option>
-        </select><br>
-        <span>爱好：</span><input type="checkbox" name="hobby" value="sports">运动
-        <input type="checkbox" name="hobby" value="art">艺术
-        <input type="checkbox" name="hobby" value="science">科学<br>
-        <span>个人描述：</span>
-        <textarea rows="3" col="10" placeholder="这是一个多行输入框，输入您的个人描述"></textarea><br>
+        <div class="form_text">
+            <span>请输入邮箱地址：</span><br><br><br>
+            <span>请输入密码：</span><br>
+            <span>请重复输入密码：</span><br><br><br>
+            <span>性别：</span><br>
+            <span>城市：</span><br>
+            <span>爱好：</span><br>
+            <span>个人描述：</span><br>
+        </div>
+        <div class="form_input">
+            <input type="text" placeholder="这是一个文本输入框"><br>
+            <p style="font-size:10px;color:#DDDDDD;">邮箱地址请按要求格式输入</p><br>
+            <input type="password" placeholder="这是一个文本输入框"><br>
+            <input type="password" placeholder="这是一个文本输入框"><br>
+            <p style="font-size:10px;color:#DDDDDD;">密码请为6-16位英文数字</p><br>
+            <input type="radio" name="sex" value="male">男
+            <input type="radio" name="sex" value="female">女<br>
+            <select name="city">
+                <option value="beijing">北京</option>
+                <option value="guangzhou">广州</option>
+                <option value="fujian">福建</option>
+                <option value="xian">西安</option>
+            </select><br>
+            <input type="checkbox" name="hobby" value="sports">运动
+            <input type="checkbox" name="hobby" value="art">艺术
+            <input type="checkbox" name="hobby" value="science">科学<br>
+            <textarea rows="3" col="10" placeholder="这是一个多行输入框，输入您的个人描述"></textarea><br>
+        </div>
         <input type="submit" name="submit" value="确认提交">
+    </form>
+</div>
+<div class="final_footer">
+    <span>版权所有</span>
 </div>
 </body>
 </html>
