@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task3</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        body{
+            padding:20px;
+        }
+        .all{
+            padding: 20px 224px 20px 224px;
+            border:1px solid #999;
+        }
+        .universal{
+            float: left;
+            position: relative;
+            border:1px solid #999;
+            padding:20px;
+        }
+        .left{
+            width:160px;
+            height:80px;
+            margin-left: -100%;
+            right: 284px;
+        }
+        .right{
+            width:80px;
+            height:500px;
+            margin-left: -204px;
+            left:204px;
+        }
+        .main{
+            width: 100%;
+            height:406px;
+            margin:0 20px 0 20px;
+        }
+        /***高度自适应：消除浮动**/
+        .all::before, .all::after {
+            content:"";
+            display:table;
+        }
+        .all::after {
+            clear:both;
+        }
+        p{
+            text-indent:30px;
+            line-height: 30px;
+        }
+        .right>img:nth-child(n+2){
+            margin-top:20px;
+        }
+        .left>span{
+            font-size:30px;
+            font-family: "楷体";
+        }
+    </style>
+</head>
+<body>
+<div class="all">
+    <div class="main universal">
+        <h2 style="text-align: center;">猫叔</h2><br>
+        <p>猫叔，即篮子猫(日语:かご猫，2002年3月8日-)超级明星猫，真名叫大白。</p>
+        <p>猫叔出生于日本岩手县一户农民家庭，其主人为它设置博客，每日更新，
+            最初以头顶万物的造型和无忧无虑的生活状态而风靡日本，
+            被日本人誉为"禅宗大师"和"世界上最知足悠闲的猫"。
+        </p>
+        <p>后因有中国网民在新浪微博设置帐号上传其可爱的照片和视频，
+            加上它相当于人类50多岁的年龄、淡定无比的神态，而被中国网民亲切的称为"猫叔"，
+            成为网络热点。它的头出奇大，身体浑圆，头顶、背脊鹅黄，其他都是雪白，喜欢眯眼，
+            喜欢戴墨镜，喜欢顶东西，还喜欢钻进狭小的篮子里睡大觉。
+        </p>
+    </div>
+    <div class="left universal">
+        <img src="logo1.jpg" width="80" height="80" alt="团队logo">
+        <span>猫叔</span>
+    </div>
+
+    <div class="right universal">
+        <img src="logo2.jpg" width="80" height="80" alt="个人logo1">
+        <img src="logo3.jpg" width="80" height="80" alt="个人logo2">
+        <img src="logo4.jpg" width="80" height="80" alt="个人logo3">
+        <img src="logo5.jpg" width="80" height="80" alt="个人logo4">
+        <img src="logo6.jpg" width="80" height="80" alt="个人logo5">
+    </div>
+</div>
+</body>
+</html>
