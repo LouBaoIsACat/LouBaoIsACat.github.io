@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Task5</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            background: #D2B48C;
+        }
+
+        /*布局*/
+        .main{
+            margin-right:279px;
+            overflow: hidden;
+        }
+
+
+        /*导航栏*/
+        .nav{
+            width:100%;
+            height:50px;
+            background: #000000;
+            position:relative;
+        }/*导航栏的大小*/
+        .nav ul{
+            position:absolute;
+            right:10px;
+            margin-top:-10px;
+        }
+        .nav i{
+            color:white;
+            margin:10px;
+            width:70px;
+            height:40px;
+        }
+        .nav ul li{
+            display:inline-block;
+            color:white;
+            font-size:14px;
+            font-weight: 300;
+            padding:5px;
+        }
+        .nav ul li a{
+            text-decoration:none;/*删除下划线*/
+            color:white;
+        }
+        .nav ul li:last-child a{
+            color:gray;
+        }
+
+
+        .part{
+            width:93%;
+            margin:15px auto;
+            padding:20px 15px 20px 15px;
+            background: white;
+            border-right-style:outset;
+            border-bottom-style:outset;
+            border-color:#DEB887;
+        }/*五个部分的div设定*/
+
+        /*第二部分*/
+        #second ul{
+            list-style: none;
+        }
+
+        /*第三部分*/
+        #third{
+            overflow: hidden;
+        }
+        .picture{
+            width:150px;
+            margin:10px 0 0 30px ;
+            border:1px solid #DDDDDD;
+            padding:8px 8px;
+            float:left;
+        }
+        .picture p{
+            text-align: center;
+        }
+
+
+        /*第四部分*/
+        #forth ol{
+            margin-left:35px;
+        }
+        /*表格*/
+        #forth>table{
+            border-collapse:collapse;
+        }
+        #forth >table,table tr,table td,table th{
+            border:1px solid #DDDDDD;
+        }
+        #forth>table {
+            width:100%;
+        }
+        #forth>table th:nth-child(-n+2),#forth>table td:nth-child(-n+2){
+            width:45%;
+        }
+        #forth table tr th{
+            background: #191970;
+            color:white;
+            font-size:13px;
+            padding:3px 0;
+        }
+        #forth table tr:last-child{
+            background:#A9A9A9;
+        }
+
+
+        /******第五部分*****/
+        #fifth{
+            height:340px;
+            width:246px;
+            float:right;
+            margin-right:15px;
+            margin-left:15px;
+        }
+        #fifth h6{
+            border-left: 2px solid #DDDDDD;
+            padding-left:8px ;
+        }/*第五部分的标题*/
+        input[name="submit"]{
+            width:100%;
+            height:33px;
+            border-radius:8px;
+            border:0px;
+            color:white;
+            background: #00008B;
+            margin-top: 5px;
+        }/*提交键*/
+        .input_size{width:70%;}
+        .form_text{
+            width:30%;
+            height:70%;
+            display:inline-block;
+        }/*表单字体*/
+        .form_input{
+            display:inline-block;
+            width:60%;
+            height:70%;
+            margin-left:10px;
+        }/*表单输入框*/
+        .form_text>span{
+            float:right;
+            font-size:10px;
+            font-family:"楷体";
+            font-weight:300;
+        }/*表单字体*/
+
+
+
+        /*页脚*/
+        .final_footer{
+            width:100%;
+            height:40px;
+            background: black;
+            text-align: center;
+        }
+        .final_footer>span{
+            color:white;
+            font-size:4px;
+        }
+        .form_input>textarea{width:90%;}
+    </style>
+</head>
+<body>
+
+
+<div class="nav">
+    <i class="icon iconfont icon-baidu"></i>
+    <ul>
+        <li><a href="#">导航链接一</a></li>
+        <li><a href="#">导航链接二</a></li>
+        <li><a href="#">导航链接三</a></li>
+        <li><a href="#">导航链接四</a></li>
+    </ul>
+</div>
+
+
+
+<div class="part" id="fifth">
+    <h6>这里以后是一个侧栏，这是侧栏的标题</h6><br>
+    <form action="#">
+        <div class="form_text">
+            <span>请输入邮箱地址：</span><br><br><br>
+            <span>请输入密码：</span><br>
+            <span>请重复输入密码：</span><br><br>
+            <span>性别：</span><br>
+            <span>城市：</span><br>
+            <span>爱好：</span><br>
+            <span>个人描述：</span><br>
+        </div>
+        <div class="form_input">
+            <input class="input_size" type="text" placeholder="这是一个文本输入框"><br>
+            <p style="font-size:10px;color:#DDDDDD;">邮箱地址请按要求格式输入</p>
+            <input class="input_size" type="password" placeholder="这是一个文本输入框"><br>
+            <input class="input_size" type="password" placeholder="这是一个文本输入框"><br>
+            <p style="font-size:10px;color:#DDDDDD;">密码请为6-16位英文数字</p>
+            <input type="radio" name="sex" value="male">男
+            <input type="radio" name="sex" value="female">女<br>
+            <select name="city">
+                <option value="beijing">北京</option>
+                <option value="guangzhou">广州</option>
+                <option value="fujian">福建</option>
+                <option value="xian">西安</option>
+            </select><br>
+            <input type="checkbox" name="hobby" value="sports">运动
+            <input type="checkbox" name="hobby" value="art">艺术
+            <input type="checkbox" name="hobby" value="science">科学<br>
+            <textarea style="width:100%;" rows="3" col="10" placeholder="这是一个多行输入框，输入您的个人描述"></textarea><br>
+        </div>
+        <input type="submit" name="submit" value="确认提交">
+    </form>
+</div>
+
+
+
+
+
+<div class="main">
+    <div class="part">
+        <h1>文章一级标题</h1>
+        <h2>文章二级级标题</h2>
+        <span>文章作者</span><span> 文章发表时间</span>
+        <p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，
+            <a href="http://ife.baidu.com">这里有个链接链接到http://ife.baidu.com</a>
+            这是一个很长的段落， 这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落。
+        </p>
+        <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+             width="300" height="250" alt="猫叔" />
+        <p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，<b>这里有个粗体字</b>,这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，
+            <a href="http://ife.baidu.com" target="_blank">这里有一个链接点击后打开新窗口连接到http://ife.baidu.com</a>
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落。
+        </p>
+    </div>
+    <div class="part" id="second">
+        <h2>另一篇文章一级标题</h2>
+        <h2>文章二级标题</h2>
+        <span>文章作者</span><span> 文章发表时间</span>
+        <p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，换行了<br>这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，<b>这里有个粗体字</b>,这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，
+            <a href="http://ife.baidu.com" >这里有一个链接连接到http://ife.baidu.com</a>
+            这是一个很长的段落，这是一个很长的段落，换行了<br>这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，
+            这是一个很长的段落，这是一个很长的段落。
+        </p>
+        <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+             width="300" height="250" alt="猫叔" />
+        <ul>
+            <li>列表项目一</li>
+            <li>列表项目二</li>
+            <li>列表项目三</li>
+        </ul>
+    </div>
+    <div class="part" id="third">
+        <h3>图片</h3>
+        <div class="picture">
+            <p>好看的图片</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+                 width="150" height="100" alt="猫叔" />
+        </div>
+        <div class="picture">
+            <p>好看的图片</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+                 width="150" height="100" alt="猫叔" />
+        </div>
+        <div class="picture">
+            <p>好看的图片</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+                 width="150" height="100" alt="猫叔" />
+        </div>
+        <div class="picture">
+            <p>好看的图片</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+                 width="150" height="100" alt="猫叔" />
+        </div>
+        <div class="picture">
+            <p>好看的图片</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+                 width="150" height="100" alt="猫叔" />
+        </div>
+        <div class="picture">
+            <p>好看的图片</p>
+            <img src="https://ps.ssl.qhimg.com/sdmt/183_135_100/t010c957b8c9e8af8d8.jpg"
+                 width="150" height="100" alt="猫叔" />
+        </div>
+    </div>
+    <div class="part" id="forth">
+        <h2>最后一篇文章一级标题</h2>
+        <h2>文章二级标题</h2>
+        <span>文章作者</span><span> 文章发表时间</span>
+        <br><br>
+        <ol>
+            <li>排名1</li>
+            <li>排名2</li>
+            <li>排名3</li>
+        </ol><br>
+        <p>下面是一个表格</p>
+        <table>
+            <tr>
+                <th>表头</th>
+                <th>表头</th>
+                <th>表头</th>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>总计</td>
+                <td colspan="2">1000</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<div class="final_footer">
+    <span>版权所有</span>
+</div>
+</body>
+</html>
