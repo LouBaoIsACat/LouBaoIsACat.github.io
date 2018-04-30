@@ -1,0 +1,28 @@
+#div{       /*下划线*/
+    width:0px;
+    height:0px;
+    background: white;
+    border-bottom:2px solid blue;
+    transition:width 3s ;
+    -webkit-transition:width 3s ;
+}
+
+#temp{        /*按钮*/
+    margin-top:50px;
+}
+#p{             /*文字*/
+    font-size:20px;
+    transition:color 0s linear 2s;
+    -webkit-transition:color 0s linear 2s ;
+}
+
+#out{           /*放按钮文字下划线的容器*/
+    width:250px;
+    display:flex;
+    display:-webkit-flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+
