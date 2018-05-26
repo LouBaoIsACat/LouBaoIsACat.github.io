@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="news-top" class="section">
+        <h3>Some title</h3>
+        <div class="content">
+            <ul>
+                <li><span>HTML</span><a href="">Some Link1</a></li>
+                <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+                <li><span>CSS</span><a href="">Some Link3</a></li>
+                <li><span>JS</span><a href="">Some Link4</a></li>
+            </ul>
+        </div>
+        <img src="">
+        <p class="">Some Text</p>
+    </div>
+    <div id="news-normal" class="section">
+        <h3>Some title</h3>
+        <div class="content">
+            <ul>
+                <li><span>HTML</span><a href="">Some Link1</a></li>
+                <li><span>HTML</span><a href="">Some Link2</a></li>
+                <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+                <li><span>CSS</span><a href="">Some Link4</a></li>
+            </ul>
+        </div>
+        <img src="">
+        <p class="">Some Text</p>
+    </div>
+</div>
+<div id="show">
+    <button onclick="getAllListItem()">li标签</button>
+    <button onclick="findAllHtmlSpanInOneSection('news-top')">news-top span</button>
+    <button onclick="findAllHtmlSpanInOneSection('news-normal')">news-normal span</button>
+    <button onclick="findListItem('news-top', 'JS')">span内容为JS的li标签</button>
+    <button onclick="findListItem('news-normal', 'HTML')">span内容为JS的li标签</button>
+    <button onclick="getActiveLinkContent('news-top')">news-top active 链接内容</button>
+    <button onclick="getActiveLinkContent('news-normal')">news-normal active 链接内容</button>
+</div>
+<script>
+    function getAllListItem() {
+        // 返回页面中所有li标签
+        var li=document.getElementsByTagName("li");
+        var show=document.getElementById("show");
+        var newp=document.createElement("p");
+        for(var i=0;i<li.length;i++)newp.innerHTML+=(li[i].outerHTML+"<br>");
+        show.appendChild(newp);
+    }
+
+    function findAllHtmlSpanInOneSection(sectionId) {
+        // 返回某个section下所有span中内容为HTML的span标签
+        var show=document.getElementById("show");
+        var section=document.getElementById(sectionId);
+        var span=section.getElementsByTagName("span");
+        var newp=document.createElement("p");
+        for(var i=0;i<span.length;i++){
+            var text=span[i].innerHTML;
+            if(text=="HTML") newp.innerHTML+=(text+"<br>");
+        }
+        show.appendChild(newp);
+    }
+
+    function findListItem(sectionId, spanCont) {
+        // 返回某个section下，所有所包含span内容为spanCont的LI标签
+        var show=document.getElementById("show");
+        var span=document.getElementById(sectionId).getElementsByTagName("span");
+        var newp=document.createElement("p");
+        for(var i=0;i<span.length;i++){
+            if(span[i].innerHTML==spanCont)newp.innerHTML+=(span[i].parentNode.outerHTML+"<br>");
+        }
+        show.appendChild(newp);
+    }
+
+    function getActiveLinkContent(sectionId) {
+        // 返回某个section下，class为active的链接中包含的文字内容
+        var show=document.getElementById("show");
+        var newp=document.createElement("p");
+        var text=document.getElementById(sectionId).getElementsByClassName("active")[0].innerHTML;
+        newp.innerHTML=text;
+        show.appendChild(newp);
+    }
+
+</script>
+</body>
+</html>
